@@ -53,7 +53,7 @@ def custom_openapi():
         routes=app.routes,
     )
 
-    # Custom documentation fastapi-jwt-auth
+    # Custom documentation fastapi-authorization
     headers = {
         "name": "Authorization",
         "in": "header",

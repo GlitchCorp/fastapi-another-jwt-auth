@@ -1,4 +1,4 @@
-It feels incomplete if there is no documentation because *fastapi-jwt-auth* that uses starlette request and response directly to get headers or cookies, you must manually generate the documentation. Thanks to `FastAPI` you can generate doc easily via `Extending OpenAPI`.
+It feels incomplete if there is no documentation because *fastapi-authorization* that uses starlette request and response directly to get headers or cookies, you must manually generate the documentation. Thanks to `FastAPI` you can generate doc easily via `Extending OpenAPI`.
 
 Here is an example to generate the doc:
 
