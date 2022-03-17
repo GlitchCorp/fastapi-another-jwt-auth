@@ -16,14 +16,16 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Flit
-        run: pip install flit
+      - name: Install poetry
+        run: pip install poetry
+      - name: Disable venv
+        run: poetry config --local virtualenvs.create false
       - name: Install Dependencies
-        run: flit install --symlink
+        run: poetry install
       - name: Test
         run: bash scripts/tests.sh
-      - name: Coveralls
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          coveralls
+      # - name: Coveralls
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     coveralls
