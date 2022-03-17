@@ -1,6 +1,6 @@
 class AuthJWTException(Exception):
     """
-    Base except which all fastapi_jwt_auth errors extend
+    Base except which all fastapi_another_jwt_auth errors extend
     """
     pass
 

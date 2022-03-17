@@ -2,7 +2,7 @@
 
 This project is still quite new and therefore having your feedback will really help to
 prioritize relevant feature developments :rocket:. If you want to contribute thankss a lot :smile:, you can
-open an <a href="https://github.com/GlitchCorp/fastapi-authorization" target="_blank">issue</a> on Github.
+open an <a href="https://github.com/GlitchCorp/fastapi-another-jwt-auth" target="_blank">issue</a> on Github.
 
 ## Developing
 
@@ -29,7 +29,7 @@ To check it worked, use:
 ```bash
 $ which pip
 
-some/directory/fastapi-authorization/env/bin/pip
+some/directory/fastapi-another-jwt-auth/env/bin/pip
 ```
 
 If it shows the pip binary at env/bin/pip then it worked. 🎉

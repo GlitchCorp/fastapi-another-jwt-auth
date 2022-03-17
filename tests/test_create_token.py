@@ -1,5 +1,5 @@
 import pytest, jwt
-from fastapi_jwt_auth import AuthJWT
+from fastapi_another_jwt_auth import AuthJWT
 from pydantic import BaseSettings
 from datetime import timedelta, datetime, timezone
 

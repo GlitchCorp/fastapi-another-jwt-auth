@@ -1,4 +1,4 @@
-Because *fastapi-authorization* configure your setting via class state that applies across all instances of the class. You need to make sure to call **load_config**(callback) above from your endpoint. Thanks to `FastAPI` when you make endpoint from `APIRouter` it will actually work as if everything was the same single app.
+Because *fastapi-another-jwt-auth* configure your setting via class state that applies across all instances of the class. You need to make sure to call **load_config**(callback) above from your endpoint. Thanks to `FastAPI` when you make endpoint from `APIRouter` it will actually work as if everything was the same single app.
 
 So you only need to define **load_config**(callback) where `Fastapi` instance created or you can import it where you included all the router. 
 

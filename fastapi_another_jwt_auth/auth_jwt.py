@@ -3,8 +3,8 @@ from jwt.algorithms import requires_cryptography, has_crypto
 from datetime import datetime, timezone, timedelta
 from typing import Optional, Dict, Union, Sequence
 from fastapi import Request, Response, WebSocket
-from fastapi_jwt_auth.auth_config import AuthConfig
-from fastapi_jwt_auth.exceptions import (
+from fastapi_another_jwt_auth.auth_config import AuthConfig
+from fastapi_another_jwt_auth.exceptions import (
     InvalidHeaderError,
     CSRFError,
     JWTDecodeError,
@@ -97,7 +97,7 @@ class AuthJWT(AuthConfig):
 
         if algorithm in asymmetric_algorithms and not has_crypto:
             raise RuntimeError(
-                "Missing dependencies for using asymmetric algorithms. run 'pip install fastapi-authorization[asymmetric]'"
+                "Missing dependencies for using asymmetric algorithms. run 'pip install fastapi-another-jwt-auth[asymmetric]'"
             )
 
         if process == "encode":
