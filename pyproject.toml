@@ -6,7 +6,7 @@ authors = ["Mariusz Masztalerczuk <mariusz@masztalerczuk.com>", "Nyoman Pradipta
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.6"
 PyJWT = "^2.3.0"
 fastapi = "^0.75.0"
 cryptography = "^36.0.2"
