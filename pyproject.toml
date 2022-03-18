@@ -1,14 +1,30 @@
 [tool.poetry]
 name = "fastapi-another-jwt-auth"
-version = "0.1.2"
+version = "0.1.4"
 description = ""
 authors = ["Mariusz Masztalerczuk <mariusz@masztalerczuk.com>", "Nyoman Pradipta Dewantara <nyomanpradipta120@gmail.com>"]
 license = "MIT"
+repository = "https://github.com/GlitchCorp/fastapi-another-jwt-auth"
+readme = "README.md"
+classifiers = [
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",    
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
 PyJWT = "^2.3.0"
-fastapi = "^0.65.2"
+fastapi = "^0.65.3"
 cryptography = "^36.0.2"
 
 [tool.poetry.dev-dependencies]
