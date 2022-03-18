@@ -1,5 +1,5 @@
 <h1 align="left" style="margin-bottom: 20px; font-weight: 500; font-size: 50px; color: black;">
-  FastAPI JWT Auth
+  FastAPI Another JWT Auth
 </h1>
 
 ![Tests](https://github.com/GlitchCorp/fastapi-another-jwt-auth/workflows/Tests/badge.svg)
