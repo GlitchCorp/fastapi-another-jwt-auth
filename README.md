@@ -8,6 +8,7 @@
 [![Downloads](https://static.pepy.tech/personalized-badge/fastapi-another-jwt-auth?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/fastapi-another-jwt-auth)
 
 ---
+<h2> The project is based on <a href="https://pypi.org/project/fastapi-jwt-auth/" target="_blank">Fastapi-jwt-auth</a> that is no longer maintained. <h2> 
 
 **Documentation**: <a href="https://GlitchCorp.github.io/fastapi-another-jwt-auth" target="_blank">https://GlitchCorp.github.io/fastapi-another-jwt-auth</a>
 

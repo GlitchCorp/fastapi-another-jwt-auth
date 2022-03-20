@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi-another-jwt-auth"
-version = "0.1.4"
+version = "0.1.6"
 description = ""
 authors = ["Mariusz Masztalerczuk <mariusz@masztalerczuk.com>", "Nyoman Pradipta Dewantara <nyomanpradipta120@gmail.com>"]
 license = "MIT"
@@ -24,7 +24,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.6"
 PyJWT = "^2.3.0"
-fastapi = "^0.65.3"
+fastapi = ">=0.65.3"
 cryptography = "^36.0.2"
 
 [tool.poetry.dev-dependencies]
