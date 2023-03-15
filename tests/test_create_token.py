@@ -22,7 +22,7 @@ def test_create_access_token(Authorize):
     with pytest.raises(TypeError,match=r"fresh"):
         Authorize.create_access_token(subject="test",fresh="lol")
 
-    with pytest.raises(ValueError,match=r"dictionary update sequence element"):
+    with pytest.raises(TypeError,match=r"headers must be a dict"):
         Authorize.create_access_token(subject=1,headers="test")
 
 def test_create_refresh_token(Authorize):
@@ -32,7 +32,7 @@ def test_create_refresh_token(Authorize):
     with pytest.raises(TypeError,match=r"subject"):
         Authorize.create_refresh_token(subject=0.123)
 
-    with pytest.raises(ValueError,match=r"dictionary update sequence element"):
+    with pytest.raises(TypeError,match=r"headers must be a dict"):
         Authorize.create_refresh_token(subject=1,headers="test")
 
 def test_create_dynamic_access_token_expires(Authorize):
