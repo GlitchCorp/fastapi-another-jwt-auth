@@ -152,6 +152,8 @@ class AuthJWT(AuthConfig):
             raise TypeError("audience must be a string or sequence")
         if algorithm and not isinstance(algorithm, str):
             raise TypeError("algorithm must be a string")
+        if headers and not isinstance(headers, dict):
+            raise TypeError("headers must be a dict")            
         if user_claims and not isinstance(user_claims, dict):
             raise TypeError("user_claims must be a dictionary")
 
