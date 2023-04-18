@@ -1,3 +1,11 @@
+## 0.18.0
+* Updated packages:
+    - pytest-cov from 3.0.0 to 4.0.0
+    - cryptography from 39.0.2 to 40.0.2
+    - pytest 6.2.5 to 7.0.1
+* Updated github actions
+* Updated python version in tests from 3.10.10 to 3.10 
+
 ## 0.5.0
 * Support for WebSocket authorization *(Thanks to @SelfhostedPro for make issues)*
 * Function **get_raw_jwt()** can pass parameter encoded_token
