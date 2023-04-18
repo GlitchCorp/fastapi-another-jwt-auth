@@ -30,7 +30,7 @@ cryptography = "^39.0.2"
 [tool.poetry.dev-dependencies]
 pytest = "^6.0.1"
 requests = "^2.27.1"
-pytest-cov = "^3.0.0"
+pytest-cov = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
