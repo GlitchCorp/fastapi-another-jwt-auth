@@ -1,7 +1,7 @@
 from datetime import timedelta
 from typing import Optional, Union, Sequence, List
 from pydantic import (
-    BaseModel,
+    field_validator, ConfigDict, BaseModel,
     validator,
     StrictBool,
     StrictInt,
@@ -44,42 +44,48 @@ class LoadConfig(BaseModel):
     authjwt_refresh_csrf_header_name: Optional[StrictStr] = "X-CSRF-Token"
     authjwt_csrf_methods: Optional[Sequence[StrictStr]] = {'POST','PUT','PATCH','DELETE'}
 
-    @validator('authjwt_access_token_expires')
+    @field_validator('authjwt_access_token_expires')
+    @classmethod
     def validate_access_token_expires(cls, v):
         if v is True:
             raise ValueError("The 'authjwt_access_token_expires' only accept value False (bool)")
         return v
 
-    @validator('authjwt_refresh_token_expires')
+    @field_validator('authjwt_refresh_token_expires')
+    @classmethod
     def validate_refresh_token_expires(cls, v):
         if v is True:
             raise ValueError("The 'authjwt_refresh_token_expires' only accept value False (bool)")
         return v
 
+    # TODO[pydantic]: We couldn't refactor the `validator`, please replace it by `field_validator` manually.
+    # Check https://docs.pydantic.dev/dev-v2/migration/#changes-to-validators for more information.
     @validator('authjwt_denylist_token_checks', each_item=True)
     def validate_denylist_token_checks(cls, v):
         if v not in ['access','refresh']:
             raise ValueError("The 'authjwt_denylist_token_checks' must be between 'access' or 'refresh'")
         return v
 
+    # TODO[pydantic]: We couldn't refactor the `validator`, please replace it by `field_validator` manually.
+    # Check https://docs.pydantic.dev/dev-v2/migration/#changes-to-validators for more information.
     @validator('authjwt_token_location', each_item=True)
     def validate_token_location(cls, v):
         if v not in ['headers','cookies']:
             raise ValueError("The 'authjwt_token_location' must be between 'headers' or 'cookies'")
         return v
 
-    @validator('authjwt_cookie_samesite')
+    @field_validator('authjwt_cookie_samesite')
+    @classmethod
     def validate_cookie_samesite(cls, v):
         if v not in ['strict','lax','none']:
             raise ValueError("The 'authjwt_cookie_samesite' must be between 'strict', 'lax', 'none'")
         return v
 
+    # TODO[pydantic]: We couldn't refactor the `validator`, please replace it by `field_validator` manually.
+    # Check https://docs.pydantic.dev/dev-v2/migration/#changes-to-validators for more information.
     @validator('authjwt_csrf_methods', each_item=True)
     def validate_csrf_methods(cls, v):
         if v.upper() not in {"GET", "HEAD", "POST", "PUT", "DELETE", "PATCH"}:
             raise ValueError("The 'authjwt_csrf_methods' must be between http request methods")
         return v.upper()
-
-    class Config:
-        min_anystr_length = 1
-        anystr_strip_whitespace = True
+    model_config = ConfigDict(str_min_length=1, str_strip_whitespace=True)
