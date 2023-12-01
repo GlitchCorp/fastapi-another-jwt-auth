@@ -26,11 +26,15 @@ PyJWT = "^2.4.0"
 fastapi = ">=0.65.3"
 cryptography = "41.0.3"
 pydantic = "1.10"
+coverage = "6.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"
 requests = "^2.27.1"
 pytest-cov = "^4.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
