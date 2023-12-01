@@ -10,7 +10,6 @@ classifiers = [
   "Environment :: Web Environment",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.6",
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
@@ -22,10 +21,11 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 PyJWT = "^2.4.0"
 fastapi = ">=0.65.3"
-cryptography = ">=39.0.2,<41.0.0"
+cryptography = "41.0.3"
+pydantic = "1.10"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"
