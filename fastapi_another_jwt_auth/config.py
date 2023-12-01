@@ -11,7 +11,7 @@ from pydantic import (
 MyType = Union[Sequence[Any], Set[Any]]
 
 class LoadConfig(BaseModel):
-    authjwt_token_location: Optional[Sequence[StrictStr] | Set[StrictStr]] = {'headers'}
+    authjwt_token_location: Optional[Union[Sequence[StrictStr], Set[StrictStr]]] = {'headers'}
     authjwt_secret_key: Optional[StrictStr] = None
     authjwt_public_key: Optional[StrictStr] = None
     authjwt_private_key: Optional[StrictStr] = None
@@ -22,7 +22,7 @@ class LoadConfig(BaseModel):
     authjwt_decode_issuer: Optional[StrictStr] = None
     authjwt_decode_audience: Optional[Union[StrictStr,Sequence[StrictStr]]] = None
     authjwt_denylist_enabled: Optional[StrictBool] = False
-    authjwt_denylist_token_checks: Optional[Sequence[StrictStr] | Set[StrictStr]] = {'access','refresh'}
+    authjwt_denylist_token_checks: Optional[Union[Sequence[StrictStr], Set[StrictStr]]] = {'access','refresh'}
     authjwt_header_name: Optional[StrictStr] = "Authorization"
     authjwt_header_type: Optional[StrictStr] = "Bearer"
     authjwt_access_token_expires: Optional[Union[StrictBool,StrictInt,timedelta]] = timedelta(minutes=15)
@@ -44,7 +44,7 @@ class LoadConfig(BaseModel):
     authjwt_refresh_csrf_cookie_path: Optional[StrictStr] = "/"
     authjwt_access_csrf_header_name: Optional[StrictStr] = "X-CSRF-Token"
     authjwt_refresh_csrf_header_name: Optional[StrictStr] = "X-CSRF-Token"
-    authjwt_csrf_methods: Optional[Sequence[StrictStr] | Set[StrictStr]] = {'POST','PUT','PATCH','DELETE'}
+    authjwt_csrf_methods: Optional[Union[Sequence[StrictStr], Set[StrictStr]]] = {'POST','PUT','PATCH','DELETE'}
 
     @field_validator('authjwt_access_token_expires')
     @classmethod
