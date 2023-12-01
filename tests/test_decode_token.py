@@ -4,7 +4,7 @@ from fastapi_another_jwt_auth.exceptions import AuthJWTException
 from fastapi import FastAPI, Depends, Request
 from fastapi.responses import JSONResponse
 from fastapi.testclient import TestClient
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 @pytest.fixture(scope='function')
 def client():
@@ -177,7 +177,7 @@ def test_invalid_aud_and_missing_aud(client,Authorize,token_aud):
     access_token = Authorize.create_access_token(subject=1,audience=token_aud)
     response = client.get('/protected',headers={'Authorization': f"Bearer {access_token}"})
     assert response.status_code == 422
-    assert response.json() == {'detail':'Invalid audience'}
+    assert response.json() == {'detail':"Audience doesn't match"}
 
     refresh_token = Authorize.create_refresh_token(subject=1)
     response = client.get('/refresh_token',headers={'Authorization':f"Bearer {refresh_token}"})
