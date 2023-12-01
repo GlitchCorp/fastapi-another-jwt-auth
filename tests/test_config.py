@@ -2,9 +2,10 @@ import pytest, os, jwt
 from fastapi_another_jwt_auth import AuthJWT
 from fastapi import FastAPI, Depends
 from fastapi.testclient import TestClient
-from pydantic import BaseSettings, ValidationError
+from pydantic import ValidationError
 from typing import Sequence, Optional
 from datetime import timedelta
+from pydantic_settings import BaseSettings
 
 @pytest.fixture(scope='function')
 def client():
