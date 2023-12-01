@@ -177,7 +177,7 @@ def test_invalid_aud_and_missing_aud(client,Authorize,token_aud):
     access_token = Authorize.create_access_token(subject=1,audience=token_aud)
     response = client.get('/protected',headers={'Authorization': f"Bearer {access_token}"})
     assert response.status_code == 422
-    assert response.json() == {'detail':"Audience doesn't match"}
+    assert response.json() == {'detail':'Invalid audience'}
 
     refresh_token = Authorize.create_refresh_token(subject=1)
     response = client.get('/refresh_token',headers={'Authorization':f"Bearer {refresh_token}"})
