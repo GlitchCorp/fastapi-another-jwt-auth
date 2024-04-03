@@ -2,7 +2,7 @@ class AuthJWTException(Exception):
     """
     Base except which all fastapi_another_jwt_auth errors extend
     """
-    def __init__(self,status_code: int, message: str):
+    def __init__(self, status_code: int, message: str):
         self.status_code = status_code
         self.message = message
 
